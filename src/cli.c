@@ -53,7 +53,6 @@ bool cli_str_equals(cstring_t a, cstring_t b) {
 }
 
 bool cli_is_help(cstring_t argument) {
-    // Supports command and long/short flags
     return cli_str_equals(argument, "--help")
         || cli_str_equals(argument, "-h");
 }
