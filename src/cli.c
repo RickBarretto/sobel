@@ -22,15 +22,27 @@ Cli * cli_new(cstring_t app, cstring_t usage) {
 
 // =~=~=~=~=~=~=~=~ Display ~=~=~=~=~=~=~=~= 
 
-
-void cli_print_usage(Cli* cli) {
-    printf("Usage: %s %s\n", cli->app, cli->usage);
-    puts("");
+void cli_print_section(cstring_t title) {
+    printf("\n%s:\n", title);
 }
 
+void cli_option(cstring_t line) {
+    printf("    %s\n", line);
+}
+
+void cli_example(Cli * cli, cstring_t code) {
+    printf("    $ %s %s\n\n", cli->app, code);
+}
 
 void cli_help(Cli* cli) {
-    cli_print_usage(cli);
+    printf("Usage: %s %s\n", cli->app, cli->usage);
+
+    cli_print_section("Options");
+    cli_option("--help | -h       displays this.");
+
+    cli_print_section("Example");
+    cli_example(cli, "input.bmp output.bmp");
+
     cli_free(cli);
     exit(EXIT_SUCCESS);
 }
