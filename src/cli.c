@@ -8,10 +8,11 @@
 // =~=~=~=~=~=~=~=~ General ~=~=~=~=~=~=~=~= 
 
 
-Cli * cli_new(cstring_t app, cstring_t usage) {
+Cli * cli_new(cstring_t app, cstring_t description, cstring_t usage) {
     Cli * cli = malloc(sizeof(Cli));
 
     cli->app = app;
+    cli->description = description;
     cli->usage = usage;
     cli->input_file = "";
     cli->output_file = "";
@@ -36,6 +37,7 @@ void cli_example(Cli * cli, cstring_t code) {
 
 void cli_help(Cli* cli) {
     printf("Usage: %s %s\n", cli->app, cli->usage);
+    printf("%s\n", cli->description);
 
     cli_print_section("Options");
     cli_option("--help | -h       displays this.");
@@ -81,9 +83,9 @@ bool cli_is_bmp(cstring_t filename) {
 // =~=~=~=~=~=~=~=~ Public ~=~=~=~=~=~=~=~= 
 
 
-Cli *cli_from(cstring_t app, cstring_t arguments[], size_t count) {
+Cli *cli_from(cstring_t app, cstring_t description, cstring_t arguments[], size_t count) {
     cstring_t usage = "<bitmap input> <bitmap output>";
-    Cli* cli = cli_new(app, usage);
+    Cli* cli = cli_new(app, description, usage);
 
     switch (count) {
     case 3: {
