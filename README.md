@@ -14,6 +14,16 @@ Example:
 
 ```
 
+## Preparing images
+
+Make sure you have [Image Magick](https://imagemagick.org/) installed in your system.
+With this tool, run:
+
+```sh
+magick data/input.png -colorspace Gray -depth 8 -type Grayscale BMP3:input.bmp
+```
+
+
 ## Compilation
 
 **For debug**
