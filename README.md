@@ -16,6 +16,18 @@ Example:
 
 ## Compilation
 
+**For debug**
+
 ```sh
 cc --std=c99 -I include src/*.c -o sobel
 ```
+
+
+**For production**
+
+```sh
+cc --std=c99 -I include src/*.c src/mpu.s -D IN_PROD -o sobel
+```
+
+- You must compile `mpu.s`
+- You must pass `IN_PROD`
