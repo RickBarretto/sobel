@@ -2,6 +2,7 @@
 
 #include <app/types.h>
 #include <app/cli.h>
+#include <app/bitmap.h>
 
 #define APP_NAME "sobel"
 #define APP_DESCRIPTION "Apply border filters to bitmap images."
@@ -24,10 +25,8 @@ exit_t main(
         arguments_length
     );
 
-    printf("Got:\t%s\n", cli->input_file);
-    printf("To:\t%s\n", cli->output_file);
-
-    printf("USE_LAPLACE_MPU_V2=%d\n", USE_LAPLACE_MPU_V2);
+    Bitmap * image = bmp_read(cli->input_file);
+    bmp_write(cli->output_file, image);
 
     cli_free(cli);
 
