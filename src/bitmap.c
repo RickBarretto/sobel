@@ -54,7 +54,7 @@ ByteBounds bounds_from(BmpInfo info) {
 Bitmap * bmp_read(const cstring_t filename) {
 
     if (not file_exists(filename)) {
-        perror("File `%s' does not exist.\n", filename);
+        fprintf(stderr, "File `%s' does not exist.\n", filename);
         exit(EXIT_FAILURE);
     }
 

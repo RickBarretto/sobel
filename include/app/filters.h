@@ -21,7 +21,7 @@ int convolution(
 int execute(
     PinIO pins, 
     Matrix matrix_a, 
-    Matrix matrix_b, 
+    Matrix matrix_b
 );
 
 void sub_matrix(Bitmap *bmp, size_t center_row, size_t center_col, uint8_t matrix[5][5]);

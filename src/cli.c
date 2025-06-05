@@ -51,8 +51,8 @@ void cli_help(Cli* cli) {
 
 
 void cli_panic(Cli* cli, cstring_t error) {
-    perror("%s: %s\n", cli->app, error);
-    perror("Try '%s --help' for more information.\n", cli->app);
+    fprintf(stderr,"%s: %s\n", cli->app, error);
+    fprintf(stderr, "Try '%s --help' for more information.\n", cli->app);
 
     cli_free(cli);
     exit(EXIT_FAILURE);
