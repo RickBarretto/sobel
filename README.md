@@ -29,14 +29,14 @@ magick data/input.png -colorspace Gray -depth 8 -type Grayscale BMP3:input.bmp
 **For debug**
 
 ```sh
-cc --std=c99 -I include src/*.c -o sobel
+cc --std=c99 -lm -I include src/*.c -o sobel
 ```
 
 
 **For production**
 
 ```sh
-cc --std=c99 -I include src/*.c src/mpu.s -D IN_PROD -o sobel
+cc --std=c99 -lm -I include src/*.c src/mpu.s -D IN_PROD -o sobel
 ```
 
 - You must compile `mpu.s`
