@@ -32,7 +32,7 @@ void cli_option(cstring_t line) {
 }
 
 void cli_example(Cli * cli, cstring_t code) {
-    printf("    $ %s %s\n\n", cli->app, code);
+    printf("    $ %s %s\n", cli->app, code);
 }
 
 void cli_help(Cli* cli) {
