@@ -7,10 +7,18 @@ Usage: sobel <bitmap input> <bitmap output>
 Apply border filters to bitmap images.
 
 Options:
-    --help | -h       displays this.
+    --help | -h       display this.
+    --sobel | -s      apply Sobel filter.
+    --ext-sobel | x   apply Extended Sobel filter.
+    --prewitt | -p    apply Prewitt filter.
+    --roberts | -r    apply Roberts filter.
+    --laplacian | -l  apply Laplacian filter.
 
 Example:
     $ sobel input.bmp output.bmp
+    $ sobel --prewitt input.bmp output.bmp
+    $ sobel -p input.bmp output.bmp
+    $ sobel data/input.bmp output.bmp -x
 
 ```
 
