@@ -33,7 +33,7 @@ static int convolution(
 }
 
 
-void sobel3(Bitmap *bmp) {
+void sobel3(Bitmap *bmp, PinIO pins) {
 
     int8_t x_mask[5][5] = {
         {-1, -2, -1,  0,  0},

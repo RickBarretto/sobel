@@ -4,8 +4,9 @@
 #include <math.h>
 #include <stdio.h>
 
+#include <app/matrix.h>
 #include <app/bitmap.h>
 
-void sobel3x3(Bitmap *bmp);
+void sobel3(Bitmap *bmp, PinIO pins);
 
 #endif
