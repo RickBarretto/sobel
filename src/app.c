@@ -3,6 +3,7 @@
 #include <app/types.h>
 #include <app/cli.h>
 #include <app/bitmap.h>
+#include <app/filters.h>
 
 #define APP_NAME "sobel"
 #define APP_DESCRIPTION "Apply border filters to bitmap images."
@@ -26,6 +27,7 @@ exit_t main(
     );
 
     Bitmap * image = bmp_read(cli->input_file);
+    sobel3(image);
     bmp_write(cli->output_file, image);
 
     cli_free(cli);

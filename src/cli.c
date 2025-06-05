@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 
 #include <app/cli.h>
 
@@ -118,7 +118,5 @@ Cli *cli_from(cstring_t app, cstring_t description, cstring_t arguments[], size_
 
 
 void cli_free(Cli* cli) {
-    free(cli->input_file);
-    free(cli->output_file);
     free(cli);
 }
