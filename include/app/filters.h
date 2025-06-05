@@ -13,6 +13,7 @@ void sobel3(Bitmap *bmp, PinIO pins);
 void prewitt(Bitmap *bmp, PinIO pins);
 void roberts(Bitmap *bmp, PinIO pins);
 void laplacian(Bitmap *bmp, PinIO pins);
+void extended_sobel(Bitmap *bmp, PinIO pins);
 
 int convolution(
     Bitmap *bitmap,
