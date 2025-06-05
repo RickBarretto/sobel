@@ -9,7 +9,7 @@
 
 
 
-void sobel3(Bitmap *bmp, PinIO pins);
+void sobel(Bitmap *bmp, PinIO pins);
 void prewitt(Bitmap *bmp, PinIO pins);
 void roberts(Bitmap *bmp, PinIO pins);
 void laplacian(Bitmap *bmp, PinIO pins);
