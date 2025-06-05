@@ -50,3 +50,23 @@ int execute(
 
     return result[4][4];
 }
+
+
+ void sub_matrix(Bitmap *bmp, size_t center_row, size_t center_col, uint8_t matrix[5][5]) {
+    for (int i = -2; i <= 2; i++) {
+        for (int j = -2; j <= 2; j++) {
+            int row = center_row + i;
+            int col = center_col + j;
+            
+            if (row < 0) row = 0;
+            if (row >= bmp->info.height) row = bmp->info.height - 1;
+            if (col < 0) col = 0;
+            if (col >= bmp->info.width) col = bmp->info.width - 1;
+            
+            size_t bitmap_row = bmp->info.height - row - 1;
+            size_t position = bitmap_row * bmp->bounds.row + col * (bmp->info.depth / 8);
+            
+            matrix[i + 2][j + 2] = bmp->data[position];
+        }
+    }
+}

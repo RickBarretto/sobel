@@ -31,9 +31,16 @@ void sobel3(Bitmap *bmp, PinIO pins) {
         for (size_t j = 0; j < bmp->info.width; j++) {
             size_t position = row * bmp->bounds.row + j * (bmp->info.depth / 8);
 
-            int gx = convolution(bmp, i, j, x_mask);
-            int gy = convolution(bmp, i, j, y_mask);
-
+            #ifdef IN_PROD
+                uint8_t neighborhood[5][5];
+                sub_matrix(bmp, i, j, neighborhood);
+                int gx = convolution(pins, neighborhood, x_mask);
+                int gy = convolution(pins, neighborhood, y_mask);
+            #else
+                int gx = convolution(bmp, i, j, x_mask);
+                int gy = convolution(bmp, i, j, y_mask);
+            #endif
+            
             int magnitude = round(sqrt((gx * gx + gy * gy)));
             if (magnitude > 255) {
                 magnitude = 255;
