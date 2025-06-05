@@ -1,11 +1,7 @@
 #include <app/filters.h>
 
 static int convolution(
-    const byte_t *data,
-    uint32_t width,
-    uint32_t height,
-    uint32_t depth,
-    size_t row_size,
+    Bitmap * bmp,
     uint32_t i,
     uint32_t j,
     int8_t kernel[5][5]
@@ -18,12 +14,12 @@ static int convolution(
             int dj = l - 2;
             int32_t ni = i + di;
             int32_t nj = j + dj;
-            if (ni < 0 || ni >= height || nj < 0 || nj >= width) {
+            if (ni < 0 || ni >= bmp->info.height || nj < 0 || nj >= bmp->info.width) {
                 continue;
             }
-            uint32_t row = height - ni - 1;
-            size_t neighbor_position = row * row_size + nj * (depth / 8);
-            uint8_t gray_value = data[neighbor_position];
+            uint32_t row = bmp->info.height - ni - 1;
+            size_t neighbor_position = row * bmp->bounds.row + nj * (bmp->info.depth / 8);
+            uint8_t gray_value = bmp->data[neighbor_position];
             sum += kernel[k][l] * gray_value;
         }
     }
@@ -61,28 +57,10 @@ void sobel3(Bitmap *bmp) {
         for (size_t j = 0; j < bmp->info.width; j++) {
             size_t position = row * bmp->bounds.row + j * (bmp->info.depth / 8);
 
-            int gx = convolution(
-                bmp->data, 
-                bmp->info.width, 
-                bmp->info.height, 
-                bmp->info.depth, 
-                bmp->bounds.row, 
-                i, j,
-                x_mask
-            );
-
-            int gy = convolution(
-                bmp->data, 
-                bmp->info.width, 
-                bmp->info.height, 
-                bmp->info.depth, 
-                bmp->bounds.row, 
-                i, j,
-                y_mask
-            );
+            int gx = convolution(bmp, i, j, x_mask);
+            int gy = convolution(bmp, i, j, y_mask);
 
             int magnitude = round(sqrt((gx * gx + gy * gy)));
-
             if (magnitude > 255) {
                 magnitude = 255;
             }
