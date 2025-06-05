@@ -37,7 +37,7 @@ exit_t main(
             .stat = bridge.connection.base + PIO_STAT_OFFSET
         };
 
-        sobel3(image, pins);
+        prewitt(image, pins);
     }
 
     bmp_write(cli->output_file, image);
