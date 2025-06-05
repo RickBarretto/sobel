@@ -19,6 +19,6 @@ byte_t * fs_read_bytes(FILE *file, size_t size, size_t amount);
 byte_t * fs_read_bytes_from(FILE * file, size_t offset, size_t size);
 
 bool fs_write(FILE * file, byte_t * data, size_t type_size, size_t amount);
-
+bool file_exists(const cstring_t filename);
 
 #endif

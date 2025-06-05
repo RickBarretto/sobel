@@ -54,7 +54,7 @@ void sobel3(Bitmap *bmp, PinIO pins) {
 
     byte_t *filtered = malloc(bmp->bounds.image);
     if (!filtered) {
-        fprintf(stderr, "Error: could not allocate memory for filtered image.\n");
+        perror("Error: could not allocate memory for filtered image.\n");
         return;
     }
 

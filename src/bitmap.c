@@ -52,6 +52,12 @@ ByteBounds bounds_from(BmpInfo info) {
 
 
 Bitmap * bmp_read(const cstring_t filename) {
+
+    if (not file_exists(filename)) {
+        perror("File `%s' does not exist.\n", filename);
+        exit(EXIT_FAILURE);
+    }
+
     Bitmap *bmp = malloc(sizeof(Bitmap));
     if (!bmp) {
         perror("Failed to allocate memory for Bitmap");
@@ -63,7 +69,7 @@ Bitmap * bmp_read(const cstring_t filename) {
         byte_t *info_header = fs_read_bytes(file, sizeof(byte_t), BMP_INFO_HEADER_SIZE);
 
         if (!byte_equal(file_header, "BM", 2)) {
-            fprintf(stderr, "Invalid BMP format.\n");
+            perror("Invalid BMP format.");
             exit(EXIT_FAILURE);
         }
 
@@ -96,7 +102,7 @@ Bitmap * bmp_read(const cstring_t filename) {
 void bmp_write(const cstring_t filename, Bitmap * bmp) {
     with_open(file, filename, FS_WRITE_BYTES) {
         unless(file) {
-            fprintf(stderr, "Cannot generate output bitmap.\n");
+            perror("Cannot generate output bitmap.");
             exit(EXIT_FAILURE);
         }
 
