@@ -53,6 +53,8 @@ void cli_help(Cli* cli) {
     cli_example(cli, "-p input.bmp output.bmp");
     cli_example(cli, "data/input.bmp output.bmp -x");
 
+    puts("");
+
     cli_free(cli);
     exit(EXIT_SUCCESS);
 }
