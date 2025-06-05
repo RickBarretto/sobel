@@ -40,10 +40,18 @@ void cli_help(Cli* cli) {
     printf("%s\n", cli->description);
 
     cli_print_section("Options");
-    cli_option("--help | -h       displays this.");
+    cli_option("--help | -h       display this.");
+    cli_option("--sobel | -s      apply Sobel filter.");
+    cli_option("--ext-sobel | x   apply Extended Sobel filter.");
+    cli_option("--prewitt | -p    apply Prewitt filter.");
+    cli_option("--roberts | -r    apply Roberts filter.");
+    cli_option("--laplacian | -l  apply Laplacian filter.");
 
     cli_print_section("Example");
     cli_example(cli, "input.bmp output.bmp");
+    cli_example(cli, "--prewitt input.bmp output.bmp");
+    cli_example(cli, "-p input.bmp output.bmp");
+    cli_example(cli, "data/input.bmp output.bmp -x");
 
     cli_free(cli);
     exit(EXIT_SUCCESS);
