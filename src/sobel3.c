@@ -4,7 +4,7 @@ static int convolution(
     Bitmap * bmp,
     uint32_t i,
     uint32_t j,
-    int8_t kernel[5][5]
+    int8_t mask[5][5]
 ) {
     int sum = 0;
 
@@ -20,7 +20,7 @@ static int convolution(
             uint32_t row = bmp->info.height - ni - 1;
             size_t neighbor_position = row * bmp->bounds.row + nj * (bmp->info.depth / 8);
             uint8_t gray_value = bmp->data[neighbor_position];
-            sum += kernel[k][l] * gray_value;
+            sum += mask[k][l] * gray_value;
         }
     }
     return sum;
