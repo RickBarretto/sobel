@@ -36,7 +36,7 @@ cc --std=c99 -lm -I include src/**/*.c -o sobel
 **For production**
 
 ```sh
-cc --std=c99 -lm -I include src/**/*.c src/mpu.s -D IN_PROD -o sobel
+cc --std=c99 -lm -I include src/**/*.c src/**/*.s -D IN_PROD -o sobel
 ```
 
 - You must compile `mpu.s`
