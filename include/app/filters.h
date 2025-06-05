@@ -18,11 +18,10 @@ int convolution(
     int8_t kernel[5][5]
 );
 
-void execute(
+int execute(
     PinIO pins, 
     Matrix matrix_a, 
     Matrix matrix_b, 
-    Matrix result
 );
 
 #endif
