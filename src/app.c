@@ -37,7 +37,23 @@ exit_t main(
             .stat = bridge.connection.base + PIO_STAT_OFFSET
         };
 
-        extended_sobel(image, pins);
+        switch (cli->filter) {
+        case Sobel: 
+            sobel(image, pins); 
+            break;
+        case ExtendedSobel: 
+            extended_sobel(image, pins); 
+            break;
+        case Prewitt: 
+            prewitt(image, pins); 
+            break;
+        case Roberts: 
+            roberts(image, pins); 
+            break;
+        case Laplacian: 
+            laplacian(image, pins); 
+            break;
+        }
     }
 
     bmp_write(cli->output_file, image);

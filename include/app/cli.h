@@ -7,6 +7,15 @@
 typedef cstring_t bmp_t;
 
 
+typedef enum {
+    Sobel,
+    ExtendedSobel,
+    Prewitt,
+    Roberts,
+    Laplacian
+} Filter;
+
+
 /// Command Line Interface representation.
 ///
 /// Application's CLI has two positional arguments: `<input>` and `<output>`.
@@ -17,6 +26,7 @@ typedef struct {
     cstring_t usage;
 
     // Positional Arguments
+    Filter filter;
     bmp_t input_file;
     bmp_t output_file;
 } Cli;
