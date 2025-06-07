@@ -1,5 +1,21 @@
 # Sobel
 
+> [!INFO] Branches: main & indie
+> 
+> The main branch contains the final project submission 
+> for the TEC499 course, designed specifically for the 
+> Cyclone V SoC HPS+FPGA board. It is hardware-dependent 
+> and requires the FPGA platform to run.
+> 
+> On the other hand, the indie branch is a standalone 
+> version built for desktop use. It’s a fully functional 
+> C-based CLI application that allows you to explore and 
+> experiment with the algorithms—no FPGA required!
+> 
+> Don’t have a Cyclone V board? No problem—check out the 
+> indie branch and start having fun with the algorithms. 
+> :wink:
+
 ## Usage
 
 ```
@@ -34,17 +50,9 @@ magick data/input.png -colorspace Gray -depth 8 -type Grayscale BMP3:input.bmp
 
 ## Compilation
 
-**For debug**
 
 ```sh
-cc --std=c99 -lm -I include src/**/*.c -o sobel
-```
-
-
-**For production**
-
-```sh
-cc --std=c99 -lm -I include src/**/*.c src/**/*.s -D IN_PROD -o sobel
+cc --std=c99 -I include src/*.c src/**/*.{c,s} -D IN_PROD -o sobel -lm
 ```
 
 - You must compile `mpu.s`
