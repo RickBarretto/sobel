@@ -3,18 +3,11 @@
 
 Bridge connect() {
     return (Bridge) {
-        #ifdef IN_PROD
-            .connection = mpu_new_connection(),
-        #else
-            .connection = {0},
-        #endif
+        .connection = {0},
         .connected = true
     };
 }
 
 void disconnect(Bridge *bridge) {
-    #ifdef IN_PROD
-        mpu_close_connection(&bridge->connection);
-    #endif
     bridge->connected = false; 
 }

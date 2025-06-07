@@ -1,9 +1,3 @@
-#ifdef IN_PROD
-    #define USE_LAPLACE_MPU_V2 true
-#else
-    #define USE_LAPLACE_MPU_V2 false
-#endif
-
 #include <stdio.h>
 
 #include <app/types.h>

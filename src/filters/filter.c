@@ -14,15 +14,8 @@ void filter_xy(Bitmap *bmp, PinIO pins, int8_t x_mask[5][5], int8_t y_mask[5][5]
         for (size_t j = 0; j < bmp->info.width; j++) {
             size_t position = row * bmp->bounds.row + j * (bmp->info.depth / 8);
 
-            #ifdef IN_PROD
-                uint8_t neighborhood[5][5];
-                sub_matrix(bmp, i, j, neighborhood);
-                int gx = convolution(pins, neighborhood, x_mask);
-                int gy = convolution(pins, neighborhood, y_mask);
-            #else
-                int gx = convolution(bmp, i, j, x_mask);
-                int gy = convolution(bmp, i, j, y_mask);
-            #endif
+            int gx = convolution(bmp, i, j, x_mask);
+            int gy = convolution(bmp, i, j, y_mask);
             
             int magnitude = round(sqrt((gx * gx + gy * gy)));
             if (magnitude > 255) {
