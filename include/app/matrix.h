@@ -4,9 +4,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <stdbool.h>
-#include <stdint.h>
-
 #define DIM    5
 #define PIO_CMD_OFFSET 0
 #define PIO_STAT_OFFSET 0
