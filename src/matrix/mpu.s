@@ -8,37 +8,6 @@
 .text
 
 @ --------------------------------------------------------------------
-@ delay_microsecond(void) -> void
-@ --------------------------------------------------------------------
-@ Gera um atraso de 1 microssegundo usando nanosleep
-@ --------------------------------------------------------------------
-.thumb_func
-.type	delay_microsecond, %function
-delay_microsecond:
-    @ Preserva registradores e configura frame
-    push    {r7, lr}              @ Salva r7 e link register
-    sub     sp, sp, #8            @ Reserva 8 bytes na pilha
-    add     r7, sp, #0            @ Configura frame pointer
-    
-    @ Configura struct timespec para nanosleep 
-    @ (1000 nanosegundos = 1 microssegundo)
-    mov     r3, #0                @ timespec.tv_sec = 0
-    str     r3, [r7, #0]
-    mov     r3, #1000             @ timespec.tv_nsec = 1000
-    str     r3, [r7, #4]
-    
-    @ Chama nanosleep com os parâmetros apropriados
-    mov     r3, r7                @ Primeiro parâmetro: ponteiro para timespec
-    mov     r0, r3
-    mov     r1, #0                @ Segundo parâmetro: NULL
-    bl      nanosleep
-    
-    @ Restaura stack e retorna
-    add     r7, r7, #8
-    mov     sp, r7
-    pop     {r7, pc}              @ Restaura registradores e retorna
-
-@ --------------------------------------------------------------------
 @ Strings constantes para mensagens de erro do `mpu_new_connection`
 @ --------------------------------------------------------------------
 .section    .rodata
@@ -273,8 +242,7 @@ mpu_next_stage:
     ldr     r2, [r7, #4]
     str     r2, [r3, #0]          @ Escreve comando sem bit de início
     
-    @ Espera a execução
-    bl      delay_microsecond
+  
     
     @ Retorna
     add     r7, r7, #16
@@ -365,16 +333,12 @@ store_loop:
     orr     r2, r2, #0x80000000   @ Define bit de início
     str     r2, [r3, #0]          @ Envia comando
     
-    @ Espera execução
-    bl      delay_microsecond
     
     @ Limpa bit de início
     ldr     r3, [r7, #4]
     ldr     r2, [r7, #0]
     str     r2, [r3, #0]
     
-    @ Espera execução
-    bl      delay_microsecond
     
     @ Incrementa contador e continua loop
     ldr     r3, [r7, #16]
@@ -427,8 +391,6 @@ load_loop:
     ldr     r2, [r7, #0]
     str     r2, [r3, #0]
     
-    @ Espera execução
-    bl      delay_microsecond
     
     @ Lê dados do registrador de status
     ldr     r3, [r7, #8]
@@ -485,8 +447,6 @@ load_loop:
     ldr     r2, [r7, #0]
     str     r2, [r3, #0]
     
-    @ Espera execução
-    bl      delay_microsecond
     
     @ Incrementa contador e continua loop
     ldr     r3, [r7, #20]
