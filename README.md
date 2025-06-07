@@ -1,5 +1,11 @@
 # Sobel
 
+> [!NOTE]
+>
+> This branch is designed for standalone desktop usage.
+> All the same features from the main branch are implemented here,
+> but **no FPGA required**.
+
 ## Usage
 
 ```
@@ -31,21 +37,17 @@ With this tool, run:
 magick data/input.png -colorspace Gray -depth 8 -type Grayscale BMP3:input.bmp
 ```
 
-
 ## Compilation
 
 **For debug**
 
 ```sh
-cc --std=c99 -lm -I include src/**/*.c -o sobel
+cc --std=c99 -I include src/**/*.c -o sobel
 ```
 
+- **Warning**: depending on your compiler version, `-lm` must be passed at the end. If you're facing issues, pass `-lm` at the end.
+- **Warning**: depending on your shell's version, `**` may not work as expected. If you are facing issues, pass: `src/*.c src/*/*.c` as files.
 
-**For production**
-
-```sh
-cc --std=c99 -lm -I include src/**/*.c src/**/*.s -D IN_PROD -o sobel
-```
-
-- You must compile `mpu.s`
-- You must pass `IN_PROD`
+## Tested using
+- Gnu C Compiler (GCC) `13.2.0`
+- Fish `3.7.1`
