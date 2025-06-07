@@ -7,6 +7,8 @@
 #include <app/matrix.h>
 #include <app/bitmap.h>
 
+void preprocess(Bitmap *bmp);
+void postprocess(Bitmap *bmp);
 void filter_xy(Bitmap *bmp, PinIO pins, int8_t x_mask[5][5], int8_t y_mask[5][5]);
 
 void sobel(Bitmap *bmp, PinIO pins);

@@ -2,7 +2,7 @@
 
 void extended_sobel(Bitmap *bmp, PinIO pins) {
 
-    int8_t x_mask[5][5] = {
+    uint8_t x_mask[5][5] = {
         {-1, -2, -1,  0,  0},
         {-2, -4, -2,  0,  0},
         { 0,  0,  0,  0,  0},
@@ -10,7 +10,7 @@ void extended_sobel(Bitmap *bmp, PinIO pins) {
         { 1,  2,  1,  0,  0}
     };
     
-    int8_t y_mask[5][5] = {
+    uint8_t y_mask[5][5] = {
         {-1, -2,  0,  2,  1},
         {-2, -4,  0,  4,  2},
         {-1, -2,  0,  2,  1},

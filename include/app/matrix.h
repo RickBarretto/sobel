@@ -1,32 +1,10 @@
 #ifndef APP_MATRIX_H
 #define APP_MATRIX_H
 
-#ifdef IN_PROD
-    #include <mpu/mpu.h>
-#else 
-    #include <stdbool.h>
-    #include <stdint.h>
+#include <stdbool.h>
+#include <stdint.h>
 
-    #include <stdbool.h>
-    #include <stdint.h>
-
-    #define DIM    5
-    #define PIO_CMD_OFFSET 0
-    #define PIO_STAT_OFFSET 0
-
-    typedef uint8_t Matrix[DIM][DIM];
-
-    typedef struct {
-        volatile uint32_t *cmd;
-        volatile uint32_t *stat;
-    } PinIO;
-
-    typedef struct {
-        int   fd;
-        void *base;
-    } Connection;
-
-#endif
+#include <mpu/mpu.h>
 
 typedef struct  {
     Connection connection;

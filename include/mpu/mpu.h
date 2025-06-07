@@ -28,7 +28,7 @@
 
 
 /// @brief  5x5 Matrix type
-typedef uint8_t Matrix[DIM][DIM];
+typedef int8_t Matrix[DIM][DIM];
 
 
 /// Pin I/O to do the communication
@@ -106,24 +106,5 @@ extern void mpu_store(Matrix M, PinIO pins, uint32_t base_cmd);
 /// @param pins     I/O pins
 /// @param base_cmd Base command
 extern void mpu_load(Matrix R, PinIO pins, uint32_t base_cmd);
-
-
-/// @brief Default test matrices A, B and empty Result.
-/// @param A Matrix A
-/// @param B Matrix A
-/// @param R Result Matrix
-void mpu_init_default_matrices(Matrix A,
-                                      Matrix B,
-                                      Matrix R)
-{
-    int r, c;
-    for (r = 0; r < DIM; r++) {
-        for (c = 0; c < DIM; c++) {
-            A[r][c] = (uint8_t)(r * DIM + c + 1);
-            B[r][c] = (uint8_t)(DIM*DIM + 1 - A[r][c]);
-            R[r][c] = 0;
-        }
-    }
-}
 
 #endif
