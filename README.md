@@ -2,20 +2,20 @@
 
 > [!NOTE] 
 > 
-> ## Branches: main & indie
+> ## Branches: main & standalone
 > 
 > The `main` branch contains the final project submission 
 > for the ***TEC499** course*, designed specifically for the 
 > *Cyclone V SoC HPS+FPGA* board. **It is hardware-dependent 
 > and requires the *FPGA* platform to run**.
 > 
-> On the other hand, the `indie` branch is a standalone 
+> On the other hand, the `standalone` branch is a standalone 
 > version *built for desktop use*. It’s a fully functional 
 > C-based CLI application that allows you to explore and 
 > experiment with the algorithms — **No FPGA required**!
 > 
 > Don’t have a *Cyclone V* board? No problem — check out the 
-> [`indie` branch](https://github.com/RickBarretto/sobel/tree/indie) and start having fun with the algorithms. 😉
+> [`standalone` branch](https://github.com/RickBarretto/sobel/tree/standalone) and start having fun with the algorithms. 😉
 
 ## Usage
 
