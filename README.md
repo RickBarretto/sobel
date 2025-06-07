@@ -1,6 +1,8 @@
 # Sobel
 
-> [!INFO] Branches: main & indie
+> [!NOTE] 
+> 
+> ## Branches: main & indie
 > 
 > The main branch contains the final project submission 
 > for the TEC499 course, designed specifically for the 
