@@ -56,4 +56,3 @@ cc --std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 ```
 
 - You must compile `mpu.s`
-- You must pass `IN_PROD`
