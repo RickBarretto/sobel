@@ -3,3 +3,5 @@
 *.elf
 sobel
 data/*
+out/*
+*.{bmp,png,jpg,jpeg}
