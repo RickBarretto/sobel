@@ -23,9 +23,9 @@ void laplacian(Bitmap *bmp, PinIO pins) {
         for (size_t j = 0; j < bmp->info.width; j++) {
             size_t position = row * bmp->bounds.row + j * (bmp->info.depth / 8);
 
-            uint8_t neighborhood[5][5];
+            int8_t neighborhood[5][5];
             sub_matrix(bmp, i, j, neighborhood);
-            int result = execute(pins, neighborhood, mask);
+            unsigned int result = execute(pins, neighborhood, mask);
             
             // Handle negative values by taking absolute value
             int magnitude = abs(result);

@@ -1,5 +1,5 @@
 #include <math.h>
-
+#include <stdio.h>
 #include <app/filters.h>
 
 void filter_xy(Bitmap *bmp, PinIO pins, int8_t x_mask[5][5], int8_t y_mask[5][5]) {
@@ -19,15 +19,17 @@ void filter_xy(Bitmap *bmp, PinIO pins, int8_t x_mask[5][5], int8_t y_mask[5][5]
 
             int8_t neighborhood[5][5];
             sub_matrix(bmp, i, j, neighborhood);
-            int gx = execute(pins, neighborhood, x_mask);
-            int gy = execute(pins, neighborhood, y_mask);
+            unsigned int gx = execute(pins, neighborhood, x_mask);
+            unsigned int gy = execute(pins, neighborhood, y_mask);
             
-            int magnitude = round(sqrt((gx * gx + gy * gy)));
-            if (magnitude > 255) {
-                magnitude = 255;
-            }
+            int magnitude = sqrt(pow(gx,2) + pow(gy,2));
+            //uint8_t result_conv = (magnitude/1442)*255;
 
-            int8_t pixel = magnitude * 1.2;
+            if (magnitude > 255)
+                magnitude = 255;
+        
+            uint8_t pixel = magnitude ;
+            
             filtered[position + 0] = pixel;
             filtered[position + 1] = pixel;
             filtered[position + 2] = pixel;

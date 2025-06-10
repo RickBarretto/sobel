@@ -1,7 +1,7 @@
 
 #include <app/filters.h>
 #include <mpu/mpu.h>
-
+#include <stdio.h>
 
 int execute(
     PinIO pins, 
@@ -18,11 +18,14 @@ int execute(
     mpu_next_stage(pins, instruction.base_cmd);
     mpu_load(result, pins, instruction.base_cmd);
 
-    return result[4][4];
+    
+    unsigned int value = result[0][0];
+    
+    return value;
 }
 
 
- void sub_matrix(Bitmap *bmp, size_t center_row, size_t center_col, uint8_t matrix[5][5]) {
+void sub_matrix(Bitmap *bmp, size_t center_row, size_t center_col, uint8_t matrix[5][5]) {
     for (int i = -2; i <= 2; i++) {
         for (int j = -2; j <= 2; j++) {
             int row = center_row + i;
@@ -36,7 +39,7 @@ int execute(
             size_t bitmap_row = bmp->info.height - row - 1;
             size_t position = bitmap_row * bmp->bounds.row + col * (bmp->info.depth / 8);
             
-            matrix[i + 2][j + 2] = bmp->data[position] / 1.2;
+            matrix[i + 2][j + 2] = bmp->data[position] ;
         }
     }
 }
