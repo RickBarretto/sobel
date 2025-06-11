@@ -1,5 +1,7 @@
 # Sobel
 
+![Sobels's Banner](./.github/banner.png)
+
 > [!NOTE]
 >
 > This branch is designed for standalone desktop usage.
