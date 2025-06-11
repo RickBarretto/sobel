@@ -1,5 +1,9 @@
 # Sobel
 
+
+![Sobel's Banner](./.github/banner.png)
+
+
 > [!IMPORTANT] 
 > 
 > ## Branches: main & standalone
