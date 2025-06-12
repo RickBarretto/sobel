@@ -67,3 +67,20 @@ cc --std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 > This repository was created for the _**TEC499 – Digital Systems** course_.
 > As such, the remainder of this README will be written in Portuguese.
 > A future continuation or supplementary documentation may be provided in English.
+
+---
+
+> [!NOTE]
+> Apesar do histórico de commits, 
+> é importante destacar que ele não reflete com precisão o empenho ou 
+> a contribuição individual de cada membro da equipe.
+> 
+> Como todo o desenvolvimento foi realizado em ambiente de laboratório, 
+> e o acesso seguro às ferramentas Git e GitHub de forma segura foi limitado, 
+> o registro de commits não deve ser utilizado como parâmetro de avaliação.
+> 
+> Também vale ressaltar que, pelas mesmas limitações, 
+> nem todas as boas práticas de versionamento 
+> e desenvolvimento foram seguidas à risca ao longo do projeto. 
+> Por isso, é possível encontrar trechos de código morto utilizados para depuração (debug) e 
+> até mesmo commits contendo patches completos.
