@@ -9,7 +9,7 @@
 |-------------------------------------------------------------|---------------------------------------------------|
 | ![Original Image from Brat's movie](./.github/original.bmp) | ![Sobel applied output](./.github/post-sobel.bmp) |
 
-**Note:** The original image was first converted to an 8-bit grayscale bitmap via `magick` before applying the filter.
+**Note:** The original image was first converted to an 8-bit grayscale bitmap using `magick` before applying the filter. For display purposes on GitHub, the images have been converted to PNG format for inclusion in the README.
 
 > [!NOTE]
 > **Disclaimer:** We do not claim ownership of the original image, which is a still from the film Brat [Brother] (1997). All rights to the image and film remain with their respective copyright holders.
