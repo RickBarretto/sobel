@@ -9,7 +9,7 @@
 > ## Branches: main & standalone
 > 
 > The `main` branch contains the final project submission 
-> for the ***TEC499** course*, designed specifically for the 
+> for the ***TEC499 - Digital Systems** course*, designed specifically for the 
 > *Cyclone V SoC HPS+FPGA* board. **It is hardware-dependent 
 > and requires the *FPGA* platform to run**.
 > 
@@ -64,6 +64,6 @@ cc --std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 ---
 
 > [!IMPORTANT]
-> This repository was created for the **TEC499 – Digital Systems** course.
+> This repository was created for the _**TEC499 – Digital Systems** course_.
 > As such, the remainder of this README will be written in Portuguese.
 > A future continuation or supplementary documentation may be provided in English.
