@@ -3,6 +3,19 @@
 
 ![Sobel's Banner](./.github/banner.png)
 
+## At A Glance
+
+| Original                                                    | Processed with Sobel Filter                       |
+|-------------------------------------------------------------|---------------------------------------------------|
+| ![Original Image from Brat's movie](./.github/original.bmp) | ![Sobel applied output](./.github/post-sobel.bmp) |
+
+**Note:** The original image was first converted to an 8-bit grayscale bitmap via `magick` before applying the filter.
+
+> [!NOTE]
+> **Disclaimer:** We do not claim ownership of the original image, which is a still from the film Brat [Brother] (1997). All rights to the image and film remain with their respective copyright holders.
+> 
+> **Fair Use Notice:** This image is used under the principles of fair use for non-commercial, educational, or transformative purposes as part of this project. If you are a rights holder and believe this use is inappropriate, please contact us to discuss proper attribution or removal.
+
 
 > [!IMPORTANT] 
 > 
