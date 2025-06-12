@@ -141,6 +141,10 @@ Cli *cli_from(cstring_t app, cstring_t description, cstring_t arguments[], size_
     bool input_found = false;
     bool output_found = false;
 
+    if (count == 2 && cli_is_help(arguments[1])) {
+        cli_help(cli);
+    }
+
     if (count < 3) {
         cli_panic(cli, "Missing output file.");
     }
