@@ -36,6 +36,12 @@
 > [`standalone` branch](https://github.com/RickBarretto/sobel/tree/standalone) and start having fun with the algorithms. 😉
 
 
+### Comparison between generated images
+
+| Sobel + Laplace MPU                           | Sobel Standalone version                                    |
+|-----------------------------------------------|-------------------------------------------------------------|
+| ![Laplace's output](./.github/post-sobel.bmp) | ![Standalone's output](./.github/standalone-post-sobel.bmp) |
+
 ## Usage
 
 ```sh
