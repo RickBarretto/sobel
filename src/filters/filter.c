@@ -12,7 +12,6 @@ void filter_xy(Bitmap *bmp, PinIO pins, int8_t x_mask[5][5], int8_t y_mask[5][5]
 
     for (size_t i = 0; i < bmp->info.height; i++) {
         size_t row = bmp->info.height - i - 1;
-        printf("%d\n", i);
 
         for (size_t j = 0; j < bmp->info.width; j++) {
             size_t position = row * bmp->bounds.row + j * (bmp->info.depth / 8);
