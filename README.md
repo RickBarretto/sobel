@@ -24,7 +24,7 @@
 
 ## Usage
 
-```
+```sh
 Usage: sobel <bitmap input> <bitmap output>
 Apply border filters to bitmap images.
 
