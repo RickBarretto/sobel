@@ -41,8 +41,6 @@ magick data/input.png -colorspace Gray -depth 8 -type Grayscale BMP3:input.bmp
 
 ## Compilation
 
-**For debug**
-
 ```sh
 cc --std=c99 -I include src/**/*.c -o sobel
 ```
