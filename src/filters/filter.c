@@ -22,7 +22,6 @@ void filter_xy(Bitmap *bmp, PinIO pins, int8_t x_mask[5][5], int8_t y_mask[5][5]
             unsigned int gy = execute(pins, neighborhood, y_mask);
             
             int magnitude = sqrt(pow(gx,2) + pow(gy,2));
-            //uint8_t result_conv = (magnitude/1442)*255;
 
             if (magnitude > 255)
                 magnitude = 255;
