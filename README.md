@@ -9,13 +9,14 @@
 |-------------------------------------------------------------|---------------------------------------------------|
 | ![Original Image from Brat's movie](./.github/original.bmp) | ![Sobel applied output](./.github/post-sobel.bmp) |
 
-**Note:** The original image was first converted to an 8-bit grayscale bitmap using `magick` before applying the filter. For display purposes on GitHub, the images have been converted to PNG format for inclusion in the README.
+**Note:** The original image was first converted to an 8-bit grayscale bitmap using `magick` before applying the filter via **Laplace Matrix Processing Unit** on Cyclone V's FPGA. For display purposes on GitHub, the images have been converted to PNG format for inclusion in the README.
 
 > [!NOTE]
 > **Disclaimer:** We do not claim ownership of the original image, which is a still from the film Brat [Brother] (1997). All rights to the image and film remain with their respective copyright holders.
 > 
 > **Fair Use Notice:** This image is used under the principles of fair use for non-commercial, educational, or transformative purposes as part of this project. If you are a rights holder and believe this use is inappropriate, please contact us to discuss proper attribution or removal.
 
+## General Branching Organization
 
 > [!IMPORTANT] 
 > 
@@ -73,8 +74,6 @@ cc --std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 ```
 
 - You must compile `mpu.s`
-
----
 
 > [!IMPORTANT]
 > This repository was created for the _**TEC499 – Digital Systems** course_.
