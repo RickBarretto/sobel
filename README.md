@@ -60,3 +60,10 @@ cc --std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 ```
 
 - You must compile `mpu.s`
+
+---
+
+> [!IMPORTANT]
+> This repository was created for the **TEC499 – Digital Systems** course.
+> As such, the remainder of this README will be written in Portuguese.
+> A future continuation or supplementary documentation may be provided in English.
