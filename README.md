@@ -70,6 +70,8 @@ cc --std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 
 ---
 
+## Relatório Técnico
+
 > [!NOTE]
 > Apesar do histórico de commits, 
 > é importante destacar que ele não reflete com precisão o empenho ou 
