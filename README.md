@@ -146,6 +146,18 @@ Principais características de engenharia que merecem destaque:
 * **CLI robusta** com *parsing* de argumentos, verificação de arquivos, mensagem de ajuda e *flags* curtas/longas (`-s/--sobel`, `-p/--prewitt` etc.).
 * **Bitmap struct customizada** que encapsula cabeçalhos, *payload* de pixels e *byte bounds*, agilizando leitura/escrita de arquivo.
 
+Válido explicar o contexto do projeto para que possa prosseguir sem dúvidas sobre os termos utilizados.
+Como o projeto se trata de um *Problem Based Learning Project* (PBL), para a matéria **TEC499, Sistemas Digitais**, contínuo de três etapas, 
+esta é uma continuação das outras duas.
+
+**Etapas dos PBLs de da turma 2025.1**:
+1. [Criação de um Coprocessador de Matrizes](https://github.com/cldaniel101/pbl1-sistemas-digitais) 
+  - Coprocessador nomeado de *MPU*.
+2. [Criação de uma Biblioteca em Assembly para realizar a comunicação HPS-FPGA](https://github.com/cldaniel101/pbl2-sistemas-digitais)
+  - Coprocessador nomeado de *Laplace MPU*, e sua biblioteca assembly de *Laplace*
+3. [Aplicativo reconhecedor de borda usando o Coprocessador do problema 2](https://github.com/RickBarretto/sobel)
+  - Coprocessador nomeado de *Laplace MPU v3* e aplicação em C responsável pela interação de *Sobel*
+
 ---
 
 ### 2 — Pré-requisitos <a id="2-pré-requisitos"></a>
