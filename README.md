@@ -178,6 +178,8 @@ cd sobel
 cc -std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm    # ajuste o pattern {c,s} se usar zsh
 ```
 
+([github.com][1])
+
 > **Observação:** no branch `main`, certifique-se de incluir **`src/mpu.s`** no comando de compilação e de carregar previamente o *bitstream* com a Laplace MPU no FPGA antes de executar o binário.
 
 Com esses requisitos satisfeitos, você estará pronto para avançar para os próximos tópicos do relatório: **Compilação & Instalação** (3) e **Modos de Execução** (4).
