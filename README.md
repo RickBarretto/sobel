@@ -232,6 +232,8 @@ sudo su
 
 * O carregamento do bitstream FPGA deve ser realizado previamente com o Quartus Prime:
 
+Perceba que o código fonte da Laplace MPU está presente no diretório `laplace/` deste repoositório.
+
 ```bash
 quartus_pgm -m jtag -o "p;LaplaceMPU.sof"
 ```
@@ -239,7 +241,7 @@ quartus_pgm -m jtag -o "p;LaplaceMPU.sof"
 Alternativamente pode ser usado a GUI do **Programmer** do **Quartus Prime** 
 para o envio do código de saída para a FPGA. Caso necessário, recompile o código.
 
-O código fonte compilado da FPGA pode ser encontrado no Github Releases.
+O código fonte com o bitstram compilado da FPGA pode ser encontrado no **Github Releases**, presente na aba à direita desse repositório.
 
 ---
 
