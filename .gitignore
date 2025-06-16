@@ -47,5 +47,16 @@ data/*
 */*_sim/
 incremental_db/
 db/
+greybox_tmp
+/.sopc_builder
+/sopc_builder_log.txt
+/nios_system_log.txt
+*.bsf
+/.metadata
+*.map
+*.objdump
+obj
+*.swp
+nios_workspace
 _output_files/
 PLLJ_PLLSPE_INFO.txt
