@@ -365,7 +365,7 @@ A CLI suporta cinco filtros diferentes, cada um com flag curta ou longa:
 **Filtro Prewitt (flag longa)**:
 
 ```bash
-./sobel --prewitt imagens/flor.bmp resultados/flor_prewitt.bmp
+./sobel imagens/flor.bmp resultados/flor_prewitt.bmp --prewitt
 ```
 
 **Filtro Laplaciano (flag curta)**:
