@@ -152,20 +152,20 @@ Principais características de engenharia que merecem destaque:
 
 A seguir, os requisitos mínimos para **compilar, instalar e executar** cada uma das variantes.
 
-| Requisito                                                                          | `main` (FPGA)                                                                                  | `standalone`                                   |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| **Sistema Operacional**                                                            | Linux (Ubuntu ≥ 20.04 recomendado)                                                             | Linux (Ubuntu / WSL), macOS ou Windows + MinGW |
-| **Compilador C**                                                                   | `gcc` ≥ 10 ou `clang` ≥ 12, com suporte a **C99**                                              | idem                                           |
-| **Assemblador**                                                                    | `as` (GNU Binutils) para compilar `mpu.s`                                                      | não se aplica                                  |
-| **Bibliotecas**                                                                    | `libm` (link automático via `-lm`)                                                             | `libm`                                         |
-| **Ferramentas de Imagem**                                                          | [`ImageMagick`](https://imagemagick.org) para converter PNG → BMP 8 bits  ([github.com][1])    | idem                                           |
-| **Hardware**                                                                       | • **Placa DE1-SoC** (Cyclone V SoC)                                                            |                                                |
-| • Cabo USB-Blaster II                                                              |                                                                                                |                                                |
-| • Fonte 5 V \| DC                                                                  |                                                                                                |                                                |
-| • Acesso ao **HPS** (ARM) via UART/SSH                                             | não requerido                                                                                  |                                                |
-| **Software FPGA**                                                                  | • **Intel Quartus Prime Lite ≥ 22.1**                                                          |                                                |
-| • **SoC EDS / Bare-Metal Toolchain** (para carregar o bitstream e compilar no HPS) | não requerido                                                                                  |                                                |
-| **Permissões**                                                                     | Acesso de escrita ao `/dev/mem` (ou uso de driver próprio) para mapear o *Light-Weight Bridge* | —                                              |
+| Requisito                                                                          | `main` (FPGA)                                                            | `standalone`                                   |
+| :--------------------------------------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------------------------------: |
+| **Sistema Operacional**                                                            | Linux (Ubuntu ≥ 20.04 recomendado)                                       | Linux (Ubuntu / WSL), macOS ou Windows + MinGW |
+| **Compilador C**                                                                   | `gcc` ≥ 10 ou `clang` ≥ 12, com suporte a **C99**                        | Idem                                           |
+| **Assembler**                                                                      | `as` (GNU Binutils) (usado via GCC)                                      | Não se aplica                                  |
+| **Bibliotecas**                                                                    | `libm` (link automático via `-lm`)                                       | `libm`                                         |
+| **Ferramentas de Imagem**                                                          | [`ImageMagick`](https://imagemagick.org) para converter PNG → BMP 8 bits | Idem                                           |
+| **Hardware**                                                                       | • **Placa DE1-SoC** (Cyclone V SoC)                                      | Não requerido                                  |
+| • Cabo USB-Blaster II                                                              | Requerido                                                                | Não requerido                                  |
+| • Fonte 5 V \| DC                                                                  | Requerido                                                                | Não requerido                                  |
+| • Acesso ao **HPS** (ARM) via UART/SSH                                             | Conexão SSH requerida                                                    | Não requerido                                  |
+| **Software FPGA**                                                                  | • **Intel Quartus Prime Lite ≥ 22.1**                                    | Não requerido                                  |
+| • **SoC EDS / Bare-Metal Toolchain** (para carregar o bitstream e compilar no HPS) | Não requerido                                                            | Não requerido                                  |
+| **Permissões**                                                                     | Acesso de escrita ao `/dev/mem` (usuário `root`)                         | Não requerido                                  |
 
 #### Instalação resumida
 
