@@ -637,7 +637,7 @@ sobel/
 
 A divisão de responsabilidades é detalhada abaixo para cada módulo:
 
-#### 📌 **`core/` – Núcleo**
+#### 📌 **Núcleo**
 
 * **`bitmap.c`**:
 
@@ -809,6 +809,11 @@ Recomenda-se o uso da ferramenta gratuita **ImageMagick** para conversão práti
 
 ```bash
 sudo apt-get install imagemagick
+```
+
+##### Instalação rápida (Windows)
+```cmd
+winget install ImageMagick.Q16-HDRI
 ```
 
 ##### Exemplo prático de conversão (PNG → BMP 8 bits):
