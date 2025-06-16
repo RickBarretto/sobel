@@ -597,36 +597,37 @@ O projeto está claramente modularizado para garantir facilidade de manutenção
 ```bash
 sobel/
 ├── include/
-│   ├── bitmap.h            # Estrutura Bitmap e funções relacionadas
-│   ├── fs.h                # Operações em arquivos
-│   ├── filter.h            # Protótipos dos filtros e convolução
-│   ├── types.h             # Tipos auxiliares usados em todo projeto
-│   └── cli.h               # Protótipos do parser CLI
+│   ├── app/
+│   │   ├── bitmap.h        # Estrutura Bitmap e funções relacionadas
+│   │   ├── cli.h           # Parser CLI 
+│   │   ├── filters.h       # Filtros e convolução
+│   │   ├── fs.h            # Funções gerais para interagir com o File System
+│   │   ├── matrix.h        # Funções para interagir com matrizes
+│   │   └── types.h         # Tipos auxiliares usados em todo projeto
+│   │
+│   └── mpu/
+│       └── mpu.h           # Biblioteca Laplace MPU (Header)
 │
 ├── src/
-│   ├── core/               # Implementação dos módulos essenciais
-│   │   ├── bitmap.c
-│   │   ├── fs.c
-│   │   └── cli.c
-│   │
 │   ├── filters/            # Implementações dos filtros
-│   │   ├── sobel.c
+│   │   ├── convolution.c   # Responsável por chamar a convolução da FPGA
+│   │   ├── extended_sobel.c
+│   │   ├── filter.c        # Rotinas comuns entre os filtros
+│   │   ├── laplacian.c
+│   │   ├── preprocess.c    # Usado para debug apenas, não usado no código final
 │   │   ├── prewitt.c
 │   │   ├── roberts.c
-│   │   ├── laplacian.c
-│   │   ├── ext_sobel.c
-│   │   └── convolution.c
+│   │   └── sobel.c
 │   │
-│   ├── utils/              # Utilitários gerais e auxiliares
-│   │   └── helpers.c
+│   ├── matrix/             # Utilitários gerais de matrizes
+│   │   └── matrix.c
+│   │   └── mpu.s           # Biblioteca Laplace MPU (Assembly)
 │   │
-│   ├── mpu.s               # Código Assembly (branch main - FPGA)
+│   ├── bitmap.c
+│   ├── cli.c
+│   ├── fs.c
 │   └── main.c              # Ponto de entrada do programa
 │
-├── docs/                   # Documentação e imagens auxiliares
-│   └── ...
-│
-├── Makefile                # Automação de build (opcional)
 └── README.md               # Este relatório markdown
 ```
 
