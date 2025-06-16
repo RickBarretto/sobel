@@ -152,11 +152,11 @@ esta é uma continuação das outras duas.
 
 **Etapas dos PBLs de da turma 2025.1**:
 1. [Criação de um Coprocessador de Matrizes](https://github.com/cldaniel101/pbl1-sistemas-digitais) 
-  - Coprocessador nomeado de *MPU*.
+    - Coprocessador nomeado de *MPU*.
 2. [Criação de uma Biblioteca em Assembly para realizar a comunicação HPS-FPGA](https://github.com/cldaniel101/pbl2-sistemas-digitais)
-  - Coprocessador nomeado de *Laplace MPU*, e sua biblioteca assembly de *Laplace*
+    - Coprocessador nomeado de *Laplace MPU*, e sua biblioteca assembly de *Laplace*
 3. [Aplicativo reconhecedor de borda usando o Coprocessador do problema 2](https://github.com/RickBarretto/sobel)
-  - Coprocessador nomeado de *Laplace MPU v3* e aplicação em C responsável pela interação de *Sobel*
+    - Coprocessador nomeado de *Laplace MPU v3* e aplicação em C responsável pela interação de *Sobel*
 
 ---
 
