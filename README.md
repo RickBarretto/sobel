@@ -958,7 +958,7 @@ display results/car_sobel.bmp
 
 ### 11 — Galeria de Resultados <a id="11-galeria-de-resultados"></a>
 
-Nesta seção são apresentados exemplos visuais demonstrando os resultados obtidos após a aplicação dos diferentes filtros implementados no projeto.
+Nesta seção são apresentados exemplos visuais demonstrando os resultados obtidos após a aplicação dos diferentes filtros implementados no projeto (todos gerados via FPGA).
 
 | Imagem original              | Filtro aplicado | Imagem resultante                                    |
 | :--------------------------: | :-------------: | :--------------------------------------------------: |
