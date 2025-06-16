@@ -1,8 +1,15 @@
+# CC Related Files
+
 *.exe
 *.out
 *.elf
 sobel
+
+# Project's Data Inputs
+
 data/*
+
+# Verilog Related Files
 
 *_generation_script*
 *_inst.vhd
