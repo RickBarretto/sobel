@@ -225,11 +225,21 @@ gcc -std=c99 -I include src/*.c src/mpu.s src/*/*.c -o sobel -lm
 **Observações importantes:**
 
 * Garanta permissões de escrita ao `/dev/mem` para o mapeamento de registradores FPGA–HPS.
+
+```sh
+sudo su
+```
+
 * O carregamento do bitstream FPGA deve ser realizado previamente com o Quartus Prime:
 
 ```bash
 quartus_pgm -m jtag -o "p;LaplaceMPU.sof"
 ```
+
+Alternativamente pode ser usado a GUI do **Programmer** do **Quartus Prime** 
+para o envio do código de saída para a FPGA. Caso necessário, recompile o código.
+
+O código fonte compilado da FPGA pode ser encontrado no Github Releases.
 
 ---
 
