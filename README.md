@@ -960,13 +960,13 @@ display results/car_sobel.bmp
 
 Nesta seção são apresentados exemplos visuais demonstrando os resultados obtidos após a aplicação dos diferentes filtros implementados no projeto.
 
-| Imagem original                 | Filtro aplicado | Imagem resultante                |
-| ------------------------------- | --------------- | -------------------------------- |
-| ![](docs/car_original.bmp)      | Sobel           | ![](docs/car_sobel.bmp)          |
-| ![](docs/house_original.bmp)    | Prewitt         | ![](docs/house_prewitt.bmp)      |
-| ![](docs/cat_original.bmp)      | Roberts         | ![](docs/cat_roberts.bmp)        |
-| ![](docs/building_original.bmp) | Laplaciano      | ![](docs/building_laplacian.bmp) |
-| ![](docs/dog_original.bmp)      | Sobel Estendido | ![](docs/dog_ext_sobel.bmp)      |
+| Imagem original              | Filtro aplicado | Imagem resultante                                    |
+| :--------------------------: | :-------------: | :--------------------------------------------------: |
+| ![](./.github/docs/cube.png) | Sobel           | ![Sobel](./.github/docs/cube-sobel.png)              |
+| ![](./.github/docs/cube.png) | Prewitt         | ![Prewitt](./.github/docs/cube-prewitt.png)          |
+| ![](./.github/docs/cube.png) | Roberts         | ![Roberts](./.github/docs/cube-roberts.png)          |
+| ![](./.github/docs/cube.png) | Laplaciano      | ![Laplacian](./.github/docs/cube-laplacian.png)      |
+| ![](./.github/docs/cube.png) | Sobel Estendido | ![Extended Sobel](./.github/docs/cube-ext-sobel.png) |
 
 ---
 
