@@ -213,7 +213,7 @@ git checkout main
 2. **Compile o código com Assembly**
 
 ```bash
-gcc -std=c99 -I include src/*.c src/mpu.s src/*/*.c -o sobel -lm
+gcc -std=c99 -I include src/*.c src/*/*.{c,s} -o sobel -lm
 ```
 
 3. **Verifique o executável**
