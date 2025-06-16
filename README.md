@@ -381,25 +381,42 @@ A CLI suporta cinco filtros diferentes, cada um com flag curta ou longa:
 Ao fornecer argumentos inválidos, inexistentes ou incompletos, o programa automaticamente exibirá um guia com a forma correta de uso:
 
 ```bash
-./sobel -z imagem.bmp resultado.bmp
+./sobel .github/original.png out.bmp 
 ```
 
 Resultado:
 
 ```text
-Error: invalid option '-z'
+sobel: Both, input and output files must be Bitmaps (.bmp)
+Try 'sobel --help' for more information.
+```
 
-Usage: sobel [FILTER] <input> <output>
+Pedindo ajuda:
 
-Available filters:
-  -s, --sobel        Apply Sobel filter
-  -p, --prewitt      Apply Prewitt filter
-  -r, --roberts      Apply Roberts filter
-  -l, --laplacian    Apply Laplacian filter
-  -x, --ext-sobel    Apply Extended Sobel filter
+```bash
+./sobel --help
+```
+
+Resultado:
+
+```text
+Usage: sobel <bitmap input> <bitmap output>
+Apply border filters to bitmap images.
+
+Options:
+    --help | -h       display this.
+    --sobel | -s      apply Sobel filter.
+    --ext-sobel | x   apply Extended Sobel filter.
+    --prewitt | -p    apply Prewitt filter.
+    --roberts | -r    apply Roberts filter.
+    --laplacian | -l  apply Laplacian filter.
 
 Example:
-  sobel --sobel img.bmp out.bmp
+    $ sobel input.bmp output.bmp
+    $ sobel --prewitt input.bmp output.bmp
+    $ sobel -p input.bmp output.bmp
+    $ sobel data/input.bmp output.bmp -x
+
 ```
 
 ---
